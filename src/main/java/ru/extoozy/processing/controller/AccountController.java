@@ -2,9 +2,11 @@ package ru.extoozy.processing.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import ru.extoozy.processing.dto.AddAccountMoneyDto;
 import ru.extoozy.processing.dto.NewAccountDto;
 import ru.extoozy.processing.model.AccountEntity;
 import ru.extoozy.processing.service.AccountService;
@@ -19,6 +21,11 @@ public class AccountController {
     @PostMapping
     public AccountEntity createAccount(@RequestBody NewAccountDto dto) {
         return accountService.createNewAccount(dto);
+    }
+
+    @PutMapping
+    public AccountEntity putMoney(@RequestBody AddAccountMoneyDto dto) {
+        return accountService.addMoneyToAccount(dto);
     }
 
 }
