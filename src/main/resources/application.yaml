@@ -1,3 +1,9 @@
+cloud:
+  db-host: ${DB_HOST}
+  eureka-host: ${EUREKA_HOST}
+  currency-url: ${CURRENCY_URL}
+
+
 spring:
   liquibase:
     change-log: classpath:db/db.changelog-master.yaml
@@ -6,7 +12,7 @@ spring:
     name: exchange-processing-service
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/processing
+    url: jdbc:postgresql://${cloud.db-host}:5432/processing
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
@@ -23,8 +29,8 @@ eureka:
   client:
     enabled: false
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://${cloud.eureka-host}:8761/eureka/
 
 service:
   currency:
-    url: "http://localhost:8085"
+    url: "http://${cloud.currency-url}:8085"
