@@ -1,4 +1,4 @@
-package ru.extoozy.processing.dto;
+package ru.extoozy.processing.api.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;

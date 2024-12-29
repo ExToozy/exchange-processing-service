@@ -1,4 +1,4 @@
-package ru.extoozy.processing.service;
+package ru.extoozy.processing.core.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;

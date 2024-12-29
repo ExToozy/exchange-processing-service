@@ -1,4 +1,4 @@
-package ru.extoozy.processing.model;
+package ru.extoozy.processing.store.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
