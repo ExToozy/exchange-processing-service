@@ -15,7 +15,6 @@ public class AnotherCurrToRubConverter implements CurrencyConverter {
     @Override
     public BigDecimal convert(String currencyFrom, String currencyTo, BigDecimal amount) {
         BigDecimal rateFrom = currencyService.loadCurrencyRate(currencyFrom);
-        System.out.println(currencyFrom);
         return amount.multiply(rateFrom);
 
     }
